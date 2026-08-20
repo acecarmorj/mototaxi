@@ -1,0 +1,44 @@
+:root{
+  --bg:#f7f8fb;
+  --card:#fff;
+  --accent:#0b6cff;
+  --muted:#666;
+  --success:#1f8f4a;
+}
+*{box-sizing:border-box;font-family:Segoe UI,Roboto,Arial,sans-serif}
+body{margin:0;background:var(--bg);color:#111;line-height:1.4}
+header{padding:1rem 1.25rem;background:linear-gradient(90deg,#fff,#f3f6ff);border-bottom:1px solid #e6e9f2}
+header h1{margin:0 0 .25rem 0;font-size:1.25rem}
+header p{margin:0;color:var(--muted);font-size:.95rem}
+
+.tabs{display:flex;gap:.5rem;padding:.75rem}
+.tabs button{padding:.5rem 1rem;border-radius:6px;border:1px solid #d6dbf0;background:#fff;cursor:pointer}
+.tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+main{padding:1rem;max-width:980px;margin:0 auto}
+.view{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 1px 2px rgba(20,30,60,0.04);margin-bottom:1rem}
+.hidden{display:none}
+
+form{display:grid;gap:.5rem;grid-template-columns:1fr 1fr}
+form label{display:flex;flex-direction:column;font-size:.95rem}
+form input{padding:.5rem;border:1px solid #dbe2f0;border-radius:6px}
+form button{grid-column:1/-1;padding:.6rem 1rem;background:var(--accent);color:#fff;border:none;border-radius:6px;cursor:pointer}
+
+.row{display:flex;gap:.5rem;align-items:center}
+.row .btn{height:2.2rem;padding:.25rem .6rem}
+
+#map, #driverMap{height:320px;border-radius:8px;border:1px solid #e9eef9;margin-top:.5rem}
+
+.list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.ride{background:#fff;padding:.75rem;border-radius:6px;border:1px solid #e9eef9}
+.ride .meta{display:flex;gap:.5rem;align-items:center;justify-content:space-between}
+.ride .meta strong{font-size:1rem}
+.ride .body p{margin:.25rem 0;color:var(--muted);font-size:.95rem}
+.ride .actions{margin-top:.5rem;display:flex;gap:.5rem}
+
+.btn{padding:.4rem .6rem;border-radius:6px;border:1px solid #d6dbf0;background:#fff;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.success{background:var(--success);color:#fff;border-color:var(--success)}
+.muted{color:var(--muted)}
+.small{font-size:.85rem}
+footer{padding:1rem;text-align:center;color:var(--muted)}

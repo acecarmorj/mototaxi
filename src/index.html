@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>mototaxi — painel</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>mototaxi — painel de teste</h1>
+    <p>Peça corridas como passageiro e aceite como piloto. Agora com mapa!</p>
+  </header>
+
+  <nav class="tabs">
+    <button id="tabPassenger" class="active">Passageiro</button>
+    <button id="tabDriver">Piloto</button>
+  </nav>
+
+  <main>
+    <section id="passengerView" class="view">
+      <h2>Solicitar corrida</h2>
+      <form id="rideForm">
+        <label>Seu nome
+          <input type="text" id="passengerName" required />
+        </label>
+        <label>Telefone
+          <input type="tel" id="passengerPhone" required />
+        </label>
+        <label>Origem
+          <div class="row">
+            <input type="text" id="origin" placeholder="Rua A, 123" required />
+            <button type="button" id="useMyLocation" class="btn">Usar minha localização</button>
+          </div>
+        </label>
+        <label>Destino
+          <div class="row">
+            <input type="text" id="destination" placeholder="Praça B" required />
+            <button type="button" id="findDestination" class="btn">Encontrar</button>
+          </div>
+        </label>
+        <button type="submit">Pedir corrida</button>
+      </form>
+
+      <div id="mapContainer">
+        <p class="muted small">Clique no mapa para escolher Origem (Shift+Click) ou Destino (Alt+Click).</p>
+        <div id="map"></div>
+      </div>
+
+      <h3>Minhas corridas</h3>
+      <div id="passengerRides" class="list"></div>
+    </section>
+
+    <section id="driverView" class="view hidden">
+      <h2>Painel do piloto</h2>
+      <p>Pedidos pendentes (marcadores no mapa). Clique em Aceitar para assumir.</p>
+      <div id="driverMap" style="height:300px;margin-bottom:.5rem"></div>
+
+      <div id="pendingRides" class="list"></div>
+
+      <h3>Minhas corridas (aceitas)</h3>
+      <div id="driverRides" class="list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Simulação local — dados em localStorage. Use várias abas do navegador para testar.</small>
+  </footer>
+
+  <template id="rideTemplate">
+    <article class="ride">
+      <div class="meta">
+        <strong class="ride-passenger"></strong>
+        <span class="ride-phone"></span>
+        <span class="ride-status"></span>
+      </div>
+      <div class="body">
+        <p><strong>Origem:</strong> <span class="ride-origin"></span></p>
+        <p><strong>Destino:</strong> <span class="ride-destination"></span></p>
+      </div>
+      <div class="actions"></div>
+    </article>
+  </template>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <script src="./app.js"></script>
+</body>
+</html>
