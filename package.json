@@ -1,0 +1,35 @@
+{
+  "name": "mototaxi",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MotoJá — app de mototáxi para Carmo, RJ (protótipo React)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name motoja --branch main --commit-dirty=true",
+    "deploy:legacy": "npm run build && wrangler pages deploy dist --project-name mototaxi --branch main --commit-dirty=true",
+    "deploy:pages": "wrangler pages deploy dist --project-name motoja --branch main --commit-dirty=true",
+    "api:dev": "wrangler dev --config worker/wrangler.toml",
+    "api:deploy": "wrangler deploy --config worker/wrangler.toml",
+    "db:migrate": "wrangler d1 migrations apply mototaxi-db --remote --config worker/wrangler.toml",
+    "db:migrate:local": "wrangler d1 migrations apply mototaxi-db --local --config worker/wrangler.toml"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.3",
+    "vite-plugin-pwa": "^1.3.0",
+    "wrangler": "^4.125.0"
+  },
+  "allowScripts": {}
+}

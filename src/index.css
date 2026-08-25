@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  MotoJá — paleta minimalista (3 cores básicas)
+  1. Branco / off-white  — superfícies e fundo
+  2. Vermelho            — marca + CTA
+  3. Charcoal            — texto e contraste
+  Cinza muted (#6B7280) só para texto secundário (não é 4ª cor de marca).
+*/
+:root {
+  --mj-white: #ffffff;
+  --mj-bg: #fafafa;
+  --mj-soft: #f3f4f6;
+  --mj-red: #e11d2e;
+  --mj-red-deep: #b91c1c;
+  --mj-ink: #111111;
+  --mj-muted: #6b7280;
+  --mj-line: rgba(17, 17, 17, 0.08);
+  --mj-font: "DM Sans", system-ui, sans-serif;
+  --mj-display: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--mj-bg);
+  color: var(--mj-ink);
+  font-family: var(--mj-font);
+  -webkit-font-smoothing: antialiased;
+}

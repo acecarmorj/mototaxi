@@ -1,0 +1,14 @@
+name = "mototaxi-api"
+main = "src/index.js"
+compatibility_date = "2025-08-01"
+workers_dev = true
+
+# Senha do painel /admin: configure como secret (não commitar valor real):
+#   npx wrangler secret put ADMIN_PASSWORD --config worker/wrangler.toml
+# Valor temporário de demo documentado no README (troque em produção).
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mototaxi-db"
+database_id = "8a89f2ae-f891-48d9-bef7-836e21dc8683"
+migrations_dir = "migrations"
